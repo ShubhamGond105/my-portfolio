@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
+// THE FIX: Import the 'Variants' type from framer-motion
+import { motion, Variants } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
 
@@ -10,7 +11,7 @@ const projects = [
     date: "Mar '25",
     description: "Developed an AI-powered code reviewer using the Gemini API to automatically analyze source code for best practices, bugs, and security vulnerabilities.",
     tech: ['Gemini API', 'React.js', 'Node.js', 'REST APIs'],
-    githubLink: 'https://github.com/ShubhamGond105/codeReview',
+    githubLink: 'https://github.com/ShubhamGond105/Al-Code-Reviewer',
     mediaType: 'video',
     mediaSrc: '/videos/codereview.mp4'
   },
@@ -19,7 +20,7 @@ const projects = [
     date: "Apr '25",
     description: "Built an AI platform using the Gemini API and NLP to extract resume content and provide real-time suggestions for formatting, wording, and ATS alignment.",
     tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'Gemini AI', 'MongoDB'],
-    githubLink: 'https://github.com/ShubhamGond105/Kalpathon_Thinktank',
+    githubLink: 'https://github.com/ShubhamGond105/Resume-Reviewer',
     mediaType: 'video',
     mediaSrc: '/videos/resume-reviewer-project.mp4'
   },
@@ -28,13 +29,14 @@ const projects = [
     date: "Oct '24",
     description: "A full-stack e-commerce platform with features like product catalog, cart, order tracking, and an admin dashboard, built using the MERN stack.",
     tech: ['MERN Stack', 'JWT', 'Tailwind CSS'],
-    githubLink: 'https://github.com/ShubhamGond105/trends',
+    githubLink: 'https://github.com/ShubhamGond105/Trends-E-Commerce',
     mediaType: 'video',
     mediaSrc: '/videos/ecom.mp4'
   },
 ];
 
-const titleContainerVariants = {
+// THE FIX: Explicitly type the animation object with ': Variants'
+const titleContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -44,7 +46,8 @@ const titleContainerVariants = {
   },
 };
 
-const letterVariants = {
+// THE FIX: Explicitly type the animation object with ': Variants'
+const letterVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -96,7 +99,6 @@ const Part2 = () => {
                   loop
                   muted
                   playsInline
-                  // THE FIX: Added pointer-events-none
                   className="w-full h-full object-cover pointer-events-none"
                 />
               ) : (
