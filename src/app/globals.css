@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@font-face {
+  font-family: 'skip';
+  src: url(/font/skip-font.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+
+/* UPDATED: New "Deep Blue & Cyan" color theme */
+:root, .dark {
+  --background: 222 47% 11%;      /* Deep Navy Blue */
+  --foreground: 220 40% 90%;      /* Soft Light Blue Text */
+  
+  --card: 224 44% 15%;            /* Darker Blue */
+  --card-foreground: 220 40% 90%; /* Soft Light Blue Text */
+  
+  --primary: 190 95% 55%;         /* Bright Cyan (Accent) */
+  --primary-foreground: 222 47% 11%; /* Deep Navy Blue (for text on buttons) */
+  
+  --secondary: 224 44% 15%;       /* Darker Blue */
+  --secondary-foreground: 220 40% 90%; /* Soft Light Blue Text */
+  
+  --muted: 224 44% 15%;           /* Darker Blue */
+  --muted-foreground: 220 25% 65%;  /* Muted Blue-Gray Text */
+
+  --border: 224 39% 25%;          /* Lighter Dark Blue Border */
+  --ring: 190 95% 55%;            /* Bright Cyan */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
