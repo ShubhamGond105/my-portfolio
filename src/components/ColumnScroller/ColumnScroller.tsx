@@ -1,5 +1,3 @@
-// file: components/ColumnScroller.tsx
-
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -13,7 +11,7 @@ export default function ColumnScroller({ children }: { children: React.ReactNode
 
     const lenis = new Lenis({
       wrapper: contentRef.current,
-      smoothTouch: true,
+      // THE FIX: Removed the unsupported 'smoothTouch' property
       duration: 1.2,
     });
 
