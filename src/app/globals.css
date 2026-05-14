@@ -1,26 +1,44 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #F0EDE4;
+  --color-foreground: #0A0A0A;
+  --color-accent: #C8A96E;
+  --color-secondary: #2D5A4E;
+  
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #F0EDE4;
+  --foreground: #0A0A0A;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  cursor: none; /* We will use a custom cursor */
+}
+
+/* Custom Scrollbar for non-lenis fallback */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #C8A96E;
+  border-radius: 4px;
+}
+
+/* Base utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
