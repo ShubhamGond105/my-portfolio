@@ -12,23 +12,23 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6 font-mono text-xs md:text-sm tracking-widest text-accent uppercase"
+          transition={{ duration: 0.8, delay: 1.5 }}
+          className="font-mono text-sm md:text-base text-accent mb-6 tracking-widest uppercase"
         >
           &lt; Hello World /&gt;
         </motion.div>
 
         <h1 className="font-serif text-5xl md:text-8xl lg:text-[10rem] font-bold leading-none tracking-tighter text-foreground mb-6 drop-shadow-md">
-          <TextReveal text="SHUBHAM" />
+          <TextReveal text="SHUBHAM" delay={1.8} />
           <br />
-          <TextReveal text="GOND." delay={0.3} />
+          <TextReveal text="GOND." delay={2.1} />
         </h1>
 
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="font-sans text-lg md:text-2xl text-foreground/70 max-w-2xl mx-auto mb-12 font-light"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2.8 }}
+          className="font-sans text-xl md:text-2xl text-foreground/80 max-w-2xl font-light leading-relaxed mb-12"
         >
           {portfolioData.role.split(" & ").map((part, i) => (
             <span key={i}>
@@ -41,7 +41,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
+          transition={{ duration: 0.8, delay: 3.2 }}
           className="flex flex-col sm:flex-row gap-6 items-center"
         >
           <MagneticButton href="#projects" className="bg-foreground text-background border-none hover:bg-accent hover:text-white">
@@ -56,7 +56,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
+        transition={{ delay: 3.8, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
       >
         <span className="font-mono text-xs tracking-widest uppercase text-foreground/50">Scroll</span>

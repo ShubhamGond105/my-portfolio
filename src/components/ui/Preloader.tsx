@@ -13,7 +13,7 @@ export default function Preloader() {
     if (progress === 100) {
       setTimeout(() => {
         setShow(false);
-      }, 800);
+      }, 1500); // Wait 1.5s after 3D is loaded for dramatic pause
     }
   }, [progress]);
 
@@ -21,7 +21,7 @@ export default function Preloader() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShow(false);
-    }, 4000); // Max 4 seconds loading screen
+    }, 5000); // Max 5 seconds fallback
     return () => clearTimeout(timeout);
   }, []);
 
@@ -30,8 +30,8 @@ export default function Preloader() {
       {show && (
         <motion.div
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, y: "-100%" }}
-          transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background"
         >
           <div className="text-center">
