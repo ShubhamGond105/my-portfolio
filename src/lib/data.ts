@@ -76,7 +76,7 @@ export const portfolioData = {
         "Secured Doctor and Patient portals with JWT-based RBAC and HIPAA-aligned auto-delete file management.",
       ],
       videoUrl: "/my-videos/Animate_project_for_portfolio_202605141110.mp4",
-      liveUrl: "https://lungai.vercel.app/", // Add your live project link here
+      liveUrl: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4", // Add your live project link here
       githubUrl: "#", // Add your github link here
     },
     {
